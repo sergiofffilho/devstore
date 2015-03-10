@@ -11,3 +11,5 @@ select * from usuario;
 select * from papel;
 select * from papel_usuario;
 ```
+
+Senha do usuário admin: teste1234
