@@ -144,12 +144,11 @@
 			<version>${hibernate.validator.version}</version>
 		</dependency>
 
-		<!-- Databases - Uses POSTGRESQL by default 
+<!-- 		Databases - Uses POSTGRESQL by default  -->
 		<dependency>
 			<groupId>postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>${postgresql.version}</version>
 		</dependency>
-		-->
 	</dependencies>
 </project>
