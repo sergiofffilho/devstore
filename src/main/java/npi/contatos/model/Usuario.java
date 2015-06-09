@@ -17,8 +17,9 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String login;
-	private String habilitado;
+	private boolean habilitado;
 	private String password;
+	private String email;
 	
 	@ManyToMany
 	@JoinTable(name = "papel_usuario", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "papel_id"))
@@ -40,11 +41,11 @@ public class Usuario {
 		this.login = login;
 	}
 
-	public String getHabilitado() {
+	public boolean getHabilitado() {
 		return habilitado;
 	}
 
-	public void setHabilitado(String enabled) {
+	public void setHabilitado(boolean enabled) {
 		this.habilitado = enabled;
 	}
 
@@ -62,6 +63,14 @@ public class Usuario {
 
 	public void setPapeis(List<Papel> papeis) {
 		this.papeis = papeis;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }
