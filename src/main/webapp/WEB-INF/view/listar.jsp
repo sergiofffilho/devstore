@@ -44,6 +44,7 @@ a{
 				<li><a href="">Contato</a></li>
 				<li><a href="">Atendimento</a></li>
 				<li><a href="">Quem somos</a></li>
+				<li><a href="<c:url value="/j_spring_security_logout" />">Logout</a></li>
 			</ul>
 		</div>
 	</nav>
