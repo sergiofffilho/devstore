@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class LoginController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(@RequestParam(value = "erro", required = false) String erro, Model model) {
+	public String login(@RequestParam(value = "error", required = false) String erro, Model model) {
 		if (erro != null) {
-			model.addAttribute("erro", "Usuário e/ou senha inválidos!");
+			model.addAttribute("error", "Usuário e/ou senha inválidos!");
 		}
 		return "login";
 	}

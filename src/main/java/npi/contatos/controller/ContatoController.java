@@ -4,6 +4,7 @@ import javax.inject.Inject;
 
 import npi.contatos.model.Contato;
 import npi.contatos.service.ContatoService;
+import npi.contatos.service.ProdutoService;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,9 @@ public class ContatoController {
 	@Inject
 	private ContatoService contatoService;
 	
+	@Inject
+	private ProdutoService produtoService;
+	
 	@RequestMapping(value = "/")
 	public String index() {
 		return "redirect:/listar";
@@ -25,6 +29,7 @@ public class ContatoController {
 	
 	@RequestMapping(value = "/listar")
 	public String listar(Model model) {
+		//model.addAttribute("produtos", produtoService.findAll());
 		model.addAttribute("contatos", contatoService.findAll());
 		return "listar";
 	}

@@ -5,9 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import npi.contatos.model.Contato;
 import npi.contatos.model.Produto;
-import npi.contatos.respository.ContatoRepository;
 import npi.contatos.respository.ProdutoRepository;
 
 @Named
