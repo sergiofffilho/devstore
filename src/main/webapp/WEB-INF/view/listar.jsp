@@ -66,8 +66,11 @@ a{
 		<label>Nome: ${produto.nome }</label> | 
 		<label>Preço: ${produto.preco }</label> | 
 		<label>Quantidade: ${produto.quantidade }</label>
-		 <button type="button" class="btn btn-primary">
-		 <a href="/contatos/remover/${produto.id }">Comprar</a></button>
+		
+		<a href="<c:url value="/comprar/${produto.id }"></c:url>">
+		 <button type="button" class="btn btn-primary">Comprar</button>
+		</a>
+		
 		<br>
 	</c:forEach>
 	<a href="/contatos/adicionar">Adicionar</a>

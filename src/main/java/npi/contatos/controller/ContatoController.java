@@ -28,6 +28,8 @@ public class ContatoController {
 		return "redirect:/listar";
 	}
 	
+	
+	
 	@RequestMapping(value = "/listar", method = RequestMethod.GET)
 	public String listar(Model model) {
 		model.addAttribute("produtos", produtoService.findAll());

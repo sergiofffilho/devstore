@@ -31,4 +31,10 @@ public class ProdutoServiceImpl implements ProdutoService {
 		produtoRepository.remover(produto);
 	}
 
+	@Override
+	public Produto getProdutoById(Integer id) {
+		Produto produto = produtoRepository.findById(id);
+		return produto;
+	}
+
 }

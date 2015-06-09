@@ -23,13 +23,13 @@
 			<password-encoder hash="sha-256"/>
 			<jdbc-user-service data-source-ref="devstore"
 				users-by-username-query="
-                    SELECT email, password, habilitado
-                    FROM usuario WHERE email = ?"
+                    SELECT login, password, habilitado
+                    FROM usuario WHERE login = ?"
 
 				authorities-by-username-query=
-                    "SELECT u.email, p.nome 
+                    "SELECT u.login, p.nome 
                     FROM usuario AS u, papel_usuario AS pu, papel AS p 
-                    WHERE u.id = pu.usuario_id AND pu.papel_id = p.id AND u.email=?" 
+                    WHERE u.id = pu.usuario_id AND pu.papel_id = p.id AND u.login=?" 
                     />
 		</authentication-provider>
  	</authentication-manager>

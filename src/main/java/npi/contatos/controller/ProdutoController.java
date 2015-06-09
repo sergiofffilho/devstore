@@ -3,7 +3,6 @@ package npi.contatos.controller;
 import javax.inject.Inject;
 
 import npi.contatos.model.Contato;
-import npi.contatos.service.ContatoService;
 import npi.contatos.service.ProdutoService;
 
 import org.springframework.stereotype.Controller;
@@ -23,6 +22,13 @@ public class ProdutoController {
 	@RequestMapping(value = "/")
 	public String index() {
 		return "redirect:produto/listar";
+	}
+	
+	@RequestMapping(value = "/comprar/{produtoId}", method = RequestMethod.GET)
+	public String comprar(@PathVariable("produtoId")Integer produtoId, Model model) {
+		model.addAttribute("produtos", produtoService.getProdutoById(produtoId));
+		//model.addAttribute("contatos", contatoService.findAll());
+		return "comprar";
 	}
 	
 	@RequestMapping(value = "/listar")
