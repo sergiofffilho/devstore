@@ -24,7 +24,7 @@ public class ProdutoRepositoryImpl implements ProdutoRepository {
 
 	@Override
 	public List<Produto> findAll() {
-		Query query = em.createQuery("from Contato");
+		Query query = em.createQuery("from Produto");
 		return query.getResultList();
 	}
 

@@ -10,13 +10,29 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Listar Contatos</title>
 <link
-	href="<c:url value="/webjars/bootstrap/3.3.4/css/bootstrap.min.css" />
-	rel=" stylesheet" />
+	href="<c:url value="/webjars/bootstrap/3.3.4/css/bootstrap.min.css" />"
+	rel="stylesheet" />
+	
 <script src="<c:url value="/webjars/jquery/2.1.0/jquery.js" />"></script>
 <script
 	src="<c:url value="/webjars/bootstrap/3.3.4/js/bootstrap.min.js" />"></script>
-<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet" />
 </head>
+
+
+<style>
+a{
+	color:#fffaf6 !important;
+}
+
+#myTopBar{
+	background-color: #3f302d;
+}
+
+#content{
+	background-color: #e1e1e3;
+}
+</style>
+	
 <body>
 	<nav class="navbar navbar-default navbar-fixed-on-top" id="myTopBar">
 		<div class="container">
@@ -35,12 +51,23 @@
 	<div class="container">
 		<div class="jumbotron" id="content"></div>
 	</div>
-	<h2>Contatos</h2>
-	<c:forEach items="${contatos}" var="contato">
-		<label>Nome: ${contato.nome }</label> | 
-		<label>Email: ${contato.email }</label> | 
-		<label>Telefone: ${contato.telefone }</label>
-		<a href="/contatos/remover/${contato.id }">remover</a>
+<!-- 	<h2>Contatos</h2> -->
+<%-- 	<c:forEach items="${contatos}" var="contato"> --%>
+<%-- 		<label>Nome: ${contato.nome }</label> |  --%>
+<%-- 		<label>Email: ${contato.email }</label> |  --%>
+<%-- 		<label>Telefone: ${contato.telefone }</label> --%>
+<%-- 		<a href="/contatos/remover/${contato.id }">remover</a> --%>
+<!-- 		<br> -->
+<%-- 	</c:forEach> --%>
+<!-- 	<a href="/contatos/adicionar">Adicionar</a> -->
+	
+	<h2>Produtos</h2>
+	<c:forEach items="${produtos}" var="produto">
+		<label>Nome: ${produto.nome }</label> | 
+		<label>Preço: ${produto.preco }</label> | 
+		<label>Quantidade: ${produto.quantidade }</label>
+		 <button type="button" class="btn btn-primary">
+		 <a href="/contatos/remover/${produto.id }">Comprar</a></button>
 		<br>
 	</c:forEach>
 	<a href="/contatos/adicionar">Adicionar</a>

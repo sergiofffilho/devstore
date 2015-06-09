@@ -14,24 +14,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("produto")
-public class ContatoController {
+public class ProdutoController {
 	
-	@Inject
-	private ContatoService contatoService;
 	
 	@Inject
 	private ProdutoService produtoService;
 	
 	@RequestMapping(value = "/")
 	public String index() {
-		return "redirect:/listar";
+		return "redirect:produto/listar";
 	}
 	
-	@RequestMapping(value = "/listar", method = RequestMethod.GET)
+	@RequestMapping(value = "/listar")
 	public String listar(Model model) {
 		model.addAttribute("produtos", produtoService.findAll());
-//		model.addAttribute("contatos", contatoService.findAll());
 		return "listar";
 	}
 	
@@ -43,13 +39,11 @@ public class ContatoController {
 	
 	@RequestMapping(value = "/adicionar", method = RequestMethod.POST)
 	public String adicionar(@ModelAttribute("contato") Contato contato) {
-		contatoService.salvar(contato);
 		return "redirect:/listar";
 	}
 	
 	@RequestMapping(value = "/remover/{id}", method = RequestMethod.GET)
 	public String remover(@PathVariable("id") Integer id) {
-		contatoService.remover(id);
 		return "redirect:/listar";
 	}
 
