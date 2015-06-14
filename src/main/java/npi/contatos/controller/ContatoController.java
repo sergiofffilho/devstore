@@ -2,7 +2,7 @@ package npi.contatos.controller;
 
 import javax.inject.Inject;
 
-import npi.contatos.model.Contato;
+import npi.contatos.model.Produto;
 import npi.contatos.service.ContatoService;
 import npi.contatos.service.ProdutoService;
 
@@ -37,13 +37,13 @@ public class ContatoController {
 	
 	@RequestMapping(value = "/adicionar", method = RequestMethod.GET)
 	public String adicionarForm(Model model) {
-		model.addAttribute("contato", new Contato());
+		model.addAttribute("produto", new Produto());
 		return "adicionar";
 	}
 	
 	@RequestMapping(value = "/adicionar", method = RequestMethod.POST)
-	public String adicionar(@ModelAttribute("contato") Contato contato) {
-		contatoService.salvar(contato);
+	public String adicionar(@ModelAttribute("produto") Produto produto) {
+		produtoService.salvar(produto);
 		return "redirect:/listar";
 	}
 	

@@ -3,6 +3,7 @@ package npi.contatos.controller;
 import javax.inject.Inject;
 
 import npi.contatos.model.Contato;
+import npi.contatos.model.Produto;
 import npi.contatos.service.ProdutoService;
 
 import org.springframework.stereotype.Controller;
@@ -37,15 +38,15 @@ public class ProdutoController {
 		return "listar";
 	}
 	
-	@RequestMapping(value = "/adicionar", method = RequestMethod.GET)
-	public String adicionarForm(Model model) {
-		model.addAttribute("contato", new Contato());
-		return "adicionar";
-	}
+//	@RequestMapping(value = "/adicionar", method = RequestMethod.GET)
+//	public String adicionarForm(Model model) {
+//		model.addAttribute("contato", new Contato());
+//		return "adicionar";
+//	}
 	
 	@RequestMapping(value = "/adicionar", method = RequestMethod.POST)
-	public String adicionar(@ModelAttribute("contato") Contato contato) {
-		return "redirect:/listar";
+	public String adicionar(@ModelAttribute("produto") Produto produto) {
+		return "adicionar";
 	}
 	
 	@RequestMapping(value = "/remover/{id}", method = RequestMethod.GET)
